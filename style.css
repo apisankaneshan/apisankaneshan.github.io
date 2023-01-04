@@ -30,7 +30,6 @@ body{
     bottom: 15%;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
     border: 1px solid #ffffff;
     padding: 10px 10px 20px;
     border-radius: 30px;
