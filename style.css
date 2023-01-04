@@ -1,0 +1,256 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+/*-header-*/
+#header{
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/backgroundTech.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.user-box h1{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 50px;
+    margin: 10px;
+    padding-top: 22.5%;
+}
+.user-box h4{
+    color: #ffffff;  
+    margin: 10px;
+}
+.user-box p {
+    color: #ffffff;
+  }
+.scroll-button{
+    bottom: 15%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #ffffff;
+    padding: 10px 10px 20px;
+    border-radius: 30px;
+}
+.scroll-bar span{
+    border: 2px solid #ffffff;
+    font-size: 10px;
+    border-radius: 30px;
+}
+.scroll-bar{
+    animation: mover 1s infinite alternate;
+}
+@keyframes mover{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(10px);}
+}
+
+/*-navigation-*/
+.about{
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.profile-img{
+    height: 400px;
+}
+.nav-bar{
+    top: 0;
+    position: sticky;
+    z-index: 2;
+}
+.navbar{
+    background-color: #ffffff;
+}
+.nav-bar .fa-bars{
+    font-size: 35px;
+    color: #000000;
+}
+.navbar-toggler{
+    outline: none !important;
+}
+.navbar-nav{
+    float: right;
+    text-align: right;
+}
+.nav-link{
+    color: #000000 !important;
+}
+
+/*-about me-*/
+#about img{
+    width: fit-content;
+}
+#about p{
+    font-size: 20px;
+}
+
+/*--projects*/
+.projects{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #f9f9f9;
+}
+.projects h1{
+    padding-bottom: 10px;
+}
+.projects p{
+    padding-bottom: 15px;
+}
+.projects-box{
+    background: #ffffff;
+    padding: 10px;
+    margin-top: 20px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.projects-box .fa{
+    margin:0 10px;
+    font-size: 30px;
+}
+.projects-box span{
+    margin: 3px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.projects-box p{
+    font-size: 18px;
+    margin-top: 20px;
+    color: #000000;
+}
+.projects-box:hover{
+    background: #000000;
+    color: #ffffff;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 0;
+    transition: 1s;
+}
+.projects-box:hover p{
+    color: #ffffff;
+}
+.projects-box img{
+    max-width: 40%;
+    max-height: 40%;
+    border-radius: 10%;
+}
+.projects .container a{
+    text-decoration: none;
+    color: #000000;
+}
+
+/*--contact--*/
+.contact{
+    padding-top: 50px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/backgroundTech.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+.contact .row{
+    padding: 30px 0;
+    font-size: 22px;
+}
+.contact .col-md-4 a:link{
+    color:#ffffff;
+    text-decoration: none;
+}
+.contact .col-md-4 a:visited{
+    color: #f9f9f9;
+    text-decoration: none;
+}
+.contact .col-md-4 a:hover{
+    color: #cccccc;
+    text-decoration: underline;
+}
+.contact .col-md-4 a:active{
+    color: #cccccc;
+    text-decoration: underline;
+}
+.contact .col-md-4 .fa{
+    padding: 10px;
+    font-size: 40px;
+}
+.contact .btn{
+    padding: 10px 25px 10px 25px;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background: transparent;
+    font-size: 18px;
+    text-align: center;
+}
+.contact .btn:hover{
+    border: 2px solid #ffffff !important;
+    background: #ffffff !important;
+    color: #000000;
+}
+.contact .btn a:hover{
+    border: 2px solid #ffffff !important;
+    background: #ffffff !important;
+    color: #000000;
+}
+.contact .btn .fa{
+    text-align: center;
+    font-size: 18px;
+}
+.contact a:link {
+    color:#cccccc;
+    text-decoration: underline;
+} 
+.contact a:visited {
+    color:#cccccc;
+    text-decoration: none;
+} 
+.contact a:hover {
+    color:#000000;
+    text-decoration: underline;
+} 
+.contact a:active {
+    color:#cccccc;
+    text-decoration: underline;
+}
+
+/*--contact form--*/
+
+.contact-form{
+    display: block;
+}
+.contact-form .col-md-12{
+    padding: 5px;
+    font-size: 20px;
+    width: 100%;
+}
+.contact-form label{
+    padding: 10px;
+    text-align: left;
+}
+.contact-form .mb-3{
+    width:50%;
+    margin-left: 25%;
+}
+.contact-form form button{
+    padding: 10px 25px 10px 25px;
+    border-radius: 30px;
+    border: 2px solid #ffffff;
+    background: #ffffff;
+    margin-bottom: 10px;
+    display: table;
+    margin: 0 auto;
+}
+
+
+.footer {
+    background-color: #000000;
+    height: 80px;
+}
+.footer p {
+    color: #ffffff;
+    font-size: 20px;
+    height: 80px;
+    line-height: 80px;
+    margin-left: 5px;
+}
