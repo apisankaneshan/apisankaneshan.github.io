@@ -22,13 +22,12 @@ body{
 .user-box h4{
     color: #ffffff;  
     margin: 10px;
-    padding-bottom: 10px;
 }
 .user-box p {
     color: #ffffff;
   }
 .scroll-button{
-    bottom: 15%;
+    bottom: 10%;
     position: absolute;
     left: 50%;
     border: 1px solid #ffffff;
