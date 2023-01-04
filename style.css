@@ -22,6 +22,7 @@ body{
 .user-box h4{
     color: #ffffff;  
     margin: 10px;
+    padding-bottom: 10px;
 }
 .user-box p {
     color: #ffffff;
