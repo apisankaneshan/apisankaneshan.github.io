@@ -6,10 +6,11 @@ body{
 
 /*-header-*/
 #header{
-    padding-bottom: 20%;
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/backgroundTech.jpg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }
 .user-box h1{
     color: #ffffff;
@@ -27,7 +28,7 @@ body{
     color: #ffffff;
   }
 .scroll-button{
-    bottom: 10%;
+    bottom: 15%;
     position: absolute;
     left: 50%;
     border: 1px solid #ffffff;
@@ -36,6 +37,7 @@ body{
 }
 .scroll-bar span{
     border: 2px solid #ffffff;
+    font-size: 10px;
     border-radius: 30px;
 }
 .scroll-bar{
@@ -78,7 +80,7 @@ body{
 }
 
 /*-about me-*/
-#about{
+#about img{
     padding-right: 10px;
 }
 #about p{
@@ -146,6 +148,7 @@ body{
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/backgroundTech.jpg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
     color: #ffffff;
 }
 .contact .row{
