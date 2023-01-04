@@ -10,7 +10,6 @@ body{
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/backgroundTech.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
 }
 .user-box h1{
     color: #ffffff;
@@ -28,7 +27,7 @@ body{
     color: #ffffff;
   }
 .scroll-button{
-    bottom: 15%;
+    bottom: 10%;
     position: absolute;
     left: 50%;
     border: 1px solid #ffffff;
@@ -148,7 +147,6 @@ body{
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(images/backgroundTech.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
     color: #ffffff;
 }
 .contact .row{
