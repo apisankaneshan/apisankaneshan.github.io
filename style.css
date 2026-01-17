@@ -142,66 +142,27 @@ body {
     overflow: hidden;
 }
 
-.header-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(15, 23, 42, 0.92) 0%,
-        rgba(30, 41, 59, 0.88) 50%,
-        rgba(15, 23, 42, 0.92) 100%
-    );
-    z-index: 1;
-}
-
-#header .container {
-    position: relative;
-    z-index: 2;
-}
-
 .user-box {
     text-align: center;
     padding: 2rem;
 }
 
-.user-box .greeting {
-    color: var(--accent-color);
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
 .user-box h1 {
     color: var(--text-light);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
     letter-spacing: -1px;
     margin-bottom: 1.5rem;
-    line-height: 1.1;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .user-box .tagline {
     color: var(--text-light);
-    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
     font-weight: 500;
-    margin-bottom: 1rem;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.user-box .subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    font-weight: 400;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
 }
 
 /* Scroll Button - Mouse Animation */
