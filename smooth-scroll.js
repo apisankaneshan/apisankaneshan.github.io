@@ -1,10 +1,13 @@
 /**
- * Custom Smooth Scroll
- * Smoothly scrolls to anchor links on the page
+ * Custom Smooth Scroll & Scroll Animations
+ * Smoothly scrolls to anchor links and animates elements on scroll
  */
 (function() {
     'use strict';
 
+    // ============================================
+    // SMOOTH SCROLL FUNCTIONALITY
+    // ============================================
     function SmoothScroll(selector) {
         // Easing function for smooth animation
         function easeInOutCubic(t) {
@@ -66,7 +69,7 @@
             event.preventDefault();
 
             var targetPosition = hash === '#top' ? 0 : getElementPosition(target);
-            scrollTo(targetPosition, 500);
+            scrollTo(targetPosition, 600);
 
             // Update URL hash
             if (history.pushState) {
@@ -78,6 +81,120 @@
         document.addEventListener('click', handleClick, false);
     }
 
-    // Expose to global scope
+    // ============================================
+    // SCROLL ANIMATIONS (Intersection Observer)
+    // ============================================
+    function initScrollAnimations() {
+        var animatedElements = document.querySelectorAll('.scroll-animate');
+
+        if (!animatedElements.length) return;
+
+        var observerOptions = {
+            root: null,
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0.1
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: Stop observing after animation
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        animatedElements.forEach(function(element) {
+            observer.observe(element);
+        });
+    }
+
+    // ============================================
+    // NAVBAR SCROLL EFFECT
+    // ============================================
+    function initNavbarEffect() {
+        var navbar = document.querySelector('.navbar');
+        var lastScrollY = window.scrollY;
+
+        if (!navbar) return;
+
+        function updateNavbar() {
+            var currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.85)';
+                navbar.style.boxShadow = 'none';
+            }
+
+            lastScrollY = currentScrollY;
+        }
+
+        // Throttle scroll events for performance
+        var ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateNavbar();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
+
+    // ============================================
+    // PARALLAX EFFECT FOR BACKGROUNDS
+    // ============================================
+    function initParallax() {
+        var parallaxSections = document.querySelectorAll('#header, .contact');
+
+        if (!parallaxSections.length) return;
+
+        function updateParallax() {
+            var scrolled = window.pageYOffset;
+
+            parallaxSections.forEach(function(section) {
+                var speed = 0.3;
+                var yPos = -(scrolled * speed);
+                section.style.backgroundPositionY = yPos + 'px';
+            });
+        }
+
+        // Only enable parallax on larger screens
+        if (window.innerWidth > 768) {
+            var ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateParallax();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+    }
+
+    // ============================================
+    // INITIALIZE ON DOM READY
+    // ============================================
+    function init() {
+        initScrollAnimations();
+        initNavbarEffect();
+        initParallax();
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+    // Expose SmoothScroll to global scope
     window.SmoothScroll = SmoothScroll;
 })();
