@@ -1,11 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Apisan's Website</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Apisan Kaneshan | ML/AI Engineer</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
@@ -15,7 +20,7 @@
                 <div class="container-fluid">
                 <a class="navbar-brand" href="#top">APISAN KANESHAN</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
+                    <i class="fas fa-bars" aria-hidden="true"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
@@ -40,39 +45,46 @@
 
         <!--header section-->
         <section id="header">
+            <canvas id="particle-canvas"></canvas>
             <div class="container text-center">
                 <div class="user-box">
-                    <h1>Welcome to Apisan Kaneshan's Website</h1>
-                    <h4><br><br>Start exploring by clicking the scroll button below</h4>
+                    <h1 class="fade-in">Welcome to Apisan's Portfolio</h1>
+                    <p class="tagline fade-in delay-1">MEng @ UWaterloo | Specializing in AI/ML and Business Management</p>
                 </div>
             </div>
-            <div class="scroll-button">
-                <div class="scroll-bar">
-                    <a href="#about">
-                        <span>
-                        </span>
-                    </a>
-                </div>
+            <div class="scroll-button fade-in delay-2">
+                <a href="#about" class="scroll-link">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span class="scroll-text">Scroll Down</span>
+                </a>
             </div>
         </section>
+        <script src="particles.js"></script>
 
         <!--user info section-->
         <section id="user-info">
 
               <!--about-->
               <div class="about container" id="about">
-                <h3 class="text-center">ABOUT ME</h3><br>
-                <div class="row">
-                    <div class="col-md-4 text-center">
-                        <img src="images/about-me-pic.jpg" class="profile-img">
+                <div class="section-header scroll-animate">
+                    <h2>About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-5 text-center scroll-animate">
+                        <div class="profile-img-wrapper">
+                            <img src="images/about-me-pic.jpg" class="profile-img" alt="Apisan Kaneshan">
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <p>
-                            <br>Hi, I'm Apisan! I am currently a MEng student at Waterloo University specializing in ML/AI and Business Leadership at the University of Waterloo.
-                            <br><br>I look for opportunities where I can use my skill set to innovate and create AI tools to make work easier.
-                            <br><br>In my free time I like to read, play sports, build new projects using the new skills I am constantly devloping, and help out around the community where I can.
-                            <br><br>Please check out my projects below by clicking each project box. You can also use the form at the bottom of the page to contact me!
-                        </p>
+                    <div class="col-lg-8 col-md-7 scroll-animate delay-1">
+                        <div class="about-content">
+                            <p class="lead">Hi, I'm Apisan! I am currently a MEng student at the University of Waterloo specializing in ML/AI and Business Leadership.</p>
+                            <p>I look for opportunities where I can use my skill set to innovate and create AI tools to make work easier.</p>
+                            <p>In my free time I like to read, play sports, build new projects using the new skills I am constantly developing, and help out around the community where I can.</p>
+                            <p>Check out my projects below or use the contact form to get in touch!</p>
+                        </div>
                     </div>
                 </div>
               </div>
@@ -80,62 +92,92 @@
               <!--projects-->
               <div class="projects" id="projects">
                 <div class="container">
-                    <h1 class="text-center">My Projects</h1>
-                    <p class="text-center">Below are the projects I have created to build on my interest for engineering.</p>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <a href="https://github.com/queueviewDevs" target="_blank">
+                    <div class="section-header scroll-animate">
+                        <h2>My Projects</h2>
+                        <div class="section-line"></div>
+                        <p class="section-subtitle">A showcase of my work in ML/AI and software engineering</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-lg-6 col-md-12 scroll-animate">
+                            <a href="https://github.com/queueviewDevs" target="_blank" class="project-link">
                             <div class="projects-box">
-                                <i class="fa fa-video-camera"></i><span>QueueView - Live Streaming Application</span>
-                                <p>A live streaming application built with a focus on real-time video processing and scalable cloud infrastructure.
-                                    <br><br><b>Technologies:</b> Node.js, C, Python, FFMPEG, NGINX, AWS
-                                    <br><br>• Implemented real-time video streaming using FFMPEG for encoding and transcoding
-                                    <br>• Built scalable backend infrastructure with Node.js and NGINX
-                                    <br>• Deployed on AWS for reliable cloud-based streaming services
-                                    <br>• Developed low-level components in C for optimized performance
-                                </p>
+                                <div class="project-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h3>QueueView</h3>
+                                <span class="project-tag">Live Streaming Application</span>
+                                <p>A live streaming application built with a focus on real-time video processing and scalable cloud infrastructure.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Node.js</span>
+                                    <span class="tech-badge">C</span>
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">FFMPEG</span>
+                                    <span class="tech-badge">AWS</span>
+                                </div>
+                                <div class="project-footer">
+                                    <span class="view-project">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                                </div>
                             </div>
                             </a>
                         </div>
-                        <div class="col-md-12">
-                            <a href="https://github.com/apisankaneshan/Waste_Classification_App" target="_blank">
+                        <div class="col-lg-6 col-md-12 scroll-animate delay-1">
+                            <a href="https://github.com/apisankaneshan/Waste_Classification_App" target="_blank" class="project-link">
                             <div class="projects-box">
-                                <i class="fa fa-recycle"></i><span>Waste Classification App</span>
-                                <p>A computer vision application that classifies waste materials to promote proper recycling and waste management.
-                                    <br><br><b>Technologies:</b> Python, OpenCV, TensorFlow, Computer Vision
-                                    <br><br>• Trained deep learning models using TensorFlow for accurate waste classification
-                                    <br>• Implemented image processing pipelines with OpenCV for real-time detection
-                                    <br>• Built an intuitive interface for users to capture and classify waste items
-                                    <br>• Designed to help reduce contamination in recycling streams
-                                </p>
+                                <div class="project-icon">
+                                    <i class="fas fa-recycle"></i>
+                                </div>
+                                <h3>Waste Classification App</h3>
+                                <span class="project-tag">Computer Vision</span>
+                                <p>A computer vision application that classifies waste materials to promote proper recycling and waste management.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">Python</span>
+                                    <span class="tech-badge">OpenCV</span>
+                                    <span class="tech-badge">TensorFlow</span>
+                                </div>
+                                <div class="project-footer">
+                                    <span class="view-project">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                                </div>
                             </div>
                             </a>
                         </div>
-                        <div class="col-md-12">
-                            <a href="https://github.com/apisankaneshan/AI_Assistant" target="_blank">
+                        <div class="col-lg-6 col-md-12 scroll-animate delay-2">
+                            <a href="https://github.com/apisankaneshan/AI_Assistant" target="_blank" class="project-link">
                             <div class="projects-box">
-                                <i class="fa fa-microphone"></i><span>AI Assistant (STT & TTS)</span>
-                                <p>An intelligent voice-enabled AI assistant featuring speech-to-text and text-to-speech capabilities.
-                                    <br><br><b>Technologies:</b> Speech Recognition, Natural Language Processing, Text-to-Speech
-                                    <br><br>• Implemented speech-to-text (STT) for natural voice input processing
-                                    <br>• Integrated text-to-speech (TTS) for conversational audio responses
-                                    <br>• Designed for hands-free interaction and accessibility
-                                    <br>• Built to handle natural language queries and provide intelligent responses
-                                </p>
+                                <div class="project-icon">
+                                    <i class="fas fa-microphone"></i>
+                                </div>
+                                <h3>AI Assistant</h3>
+                                <span class="project-tag">Speech Recognition</span>
+                                <p>An intelligent voice-enabled AI assistant featuring speech-to-text and text-to-speech capabilities.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">STT/TTS</span>
+                                    <span class="tech-badge">NLP</span>
+                                    <span class="tech-badge">Python</span>
+                                </div>
+                                <div class="project-footer">
+                                    <span class="view-project">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                                </div>
                             </div>
                             </a>
                         </div>
-                        <div class="col-md-12">
-                            <a href="https://github.com/apisankaneshan/TGP-School-Recommendation-NN" target="_blank">
+                        <div class="col-lg-6 col-md-12 scroll-animate delay-3">
+                            <a href="https://github.com/apisankaneshan/TGP-School-Recommendation-NN" target="_blank" class="project-link">
                             <div class="projects-box">
-                                <i class="fa fa-graduation-cap"></i><span>Guidance Counselor AI</span>
-                                <p>An AI-powered guidance counselor that provides personalized school recommendations using neural networks.
-                                    <br><br><b>Technologies:</b> Python, TensorFlow, Llama 3.2, Hugging Face, React.js, Node.js
-                                    <br><br>• Built neural network models with TensorFlow for recommendation predictions
-                                    <br>• Integrated Llama 3.2 LLM via Hugging Face for natural language interactions
-                                    <br>• Developed a responsive frontend with React.js for user engagement
-                                    <br>• Created a Node.js backend API for seamless model integration
-                                </p>
+                                <div class="project-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>Guidance Counselor AI</h3>
+                                <span class="project-tag">Neural Networks</span>
+                                <p>An AI-powered guidance counselor that provides personalized school recommendations using neural networks.</p>
+                                <div class="tech-stack">
+                                    <span class="tech-badge">TensorFlow</span>
+                                    <span class="tech-badge">Llama 3.2</span>
+                                    <span class="tech-badge">React.js</span>
+                                    <span class="tech-badge">Node.js</span>
+                                </div>
+                                <div class="project-footer">
+                                    <span class="view-project">View on GitHub <i class="fas fa-arrow-right"></i></span>
+                                </div>
                             </div>
                             </a>
                         </div>
@@ -146,58 +188,89 @@
               <!--Contact-->
               <div class="contact" id="contact">
                 <div class="container">
-                    <h1 class="text-center">Contact Me</h1>
-                    <p class="text-center">Fill out the form below to send me a message and I'll get back to you shortly.</p>
-                  <div class="contact-form">
-                    <form action="https://formspree.io/f/xknawpar" method="POST">
-                        <div>
-                            <div class="mb-3">
-                                <label for="FormControlInput1" class="form-label">Your Name:</label>
-                                <input type="text" class="form-control" id="FormControlInput1" placeholder="Full Name" name="name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="FormControlInput2" class="form-label">Email address:</label>
-                                <input type="email" class="form-control" id="FormControlInput2" placeholder="email@example.com" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="FormControlTextarea1" class="form-label">Message:</label>
-                                <textarea class="form-control" id="FormControlTextarea1" rows="3" placeholder="Message..." name="message" required></textarea>
+                    <div class="section-header scroll-animate">
+                        <h2>Get In Touch</h2>
+                        <div class="section-line light"></div>
+                        <p class="section-subtitle light">Have a question or want to work together? Let's connect!</p>
+                    </div>
+                    <div class="row g-5">
+                        <div class="col-lg-6 scroll-animate">
+                            <div class="contact-form glass-card">
+                                <h3>Send a Message</h3>
+                                <form action="https://formspree.io/f/xknawpar" method="POST">
+                                    <div class="form-group">
+                                        <label for="FormControlInput1">Your Name</label>
+                                        <input type="text" class="form-control" id="FormControlInput1" placeholder="John Doe" name="name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="FormControlInput2">Email Address</label>
+                                        <input type="email" class="form-control" id="FormControlInput2" placeholder="john@example.com" name="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="FormControlTextarea1">Message</label>
+                                        <textarea class="form-control" id="FormControlTextarea1" rows="4" placeholder="Your message here..." name="message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn-send">
+                                        <span>Send Message</span>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
-                        <button type="submit">Send</button>
-                    </form>
-                    <div class="row">
-                        <div class="col-md-6 text-center">
-                            <i class="fa fa-envelope"></i>
-                            <p>apisankaneshan@gmail.com</p>
-                            
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <i class="fa fa-link"></i>
-                            <p>https://github.com/apisankaneshan</p>
+                        <div class="col-lg-6 scroll-animate delay-1">
+                            <div class="contact-info">
+                                <div class="contact-card glass-card">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Email</h4>
+                                        <a href="mailto:apisankaneshan@gmail.com">apisankaneshan@gmail.com</a>
+                                    </div>
+                                </div>
+                                <div class="contact-card glass-card">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>GitHub</h4>
+                                        <a href="https://github.com/apisankaneshan" target="_blank">github.com/apisankaneshan</a>
+                                    </div>
+                                </div>
+                                <div class="contact-card glass-card">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-linkedin"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>LinkedIn</h4>
+                                        <a href="https://www.linkedin.com/in/apisan/" target="_blank">linkedin.com/in/apisan</a>
+                                    </div>
+                                </div>
+                                <div class="contact-buttons">
+                                    <a href="documents/Apisan Kaneshan Resume.pdf" download="Apisan Resume" target="_blank" class="btn-outline">
+                                        <i class="fas fa-download"></i>
+                                        <span>Download Resume</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-12 text-center">
-                    <a href="documents/Apisan Kaneshan Resume.pdf" download="Apisan Resume" target="_blank">
-                        <button type="button" class="btn btn-primary">
-                            <i class="fa fa-download"></i>
-                            Resume
-                        </button>
-                    </a>
-                    <a href="https://www.linkedin.com/in/apisan/" target="_blank">
-                        <button type="button" class="btn btn-primary">
-                            <i class="fa fa-linkedin-square"></i>
-                            LinkedIn
-                        </button>
-                    </a>
-                    </div>
-                  </div>
-                  </div>
+                </div>
               </div>
 
-              <div class="footer">
-                <p>Copyright <i class="fa fa-copyright"></i> 2024 Apisan Kaneshan</p>
-              </div>
+              <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <p>Designed & Built by Apisan Kaneshan</p>
+                        <div class="social-links">
+                            <a href="https://github.com/apisankaneshan" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/apisan/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:apisankaneshan@gmail.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                        <p class="copyright">&copy; 2024 Apisan Kaneshan. All rights reserved.</p>
+                    </div>
+                </div>
+              </footer>
 
         </section>
     </body>
