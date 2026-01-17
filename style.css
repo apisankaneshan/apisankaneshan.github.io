@@ -135,34 +135,45 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url(images/backgroundTech.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e3a5f 50%, var(--dark-bg) 100%);
     overflow: hidden;
+}
+
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .user-box {
     text-align: center;
     padding: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .user-box h1 {
     color: var(--text-light);
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 700;
-    letter-spacing: -1px;
-    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.25rem;
     line-height: 1.2;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .user-box .tagline {
-    color: var(--text-light);
-    font-size: clamp(1rem, 2.5vw, 1.35rem);
-    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
     margin-bottom: 0;
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    letter-spacing: 0.5px;
 }
 
 /* Scroll Button - Mouse Animation */
@@ -317,7 +328,7 @@ body {
    ABOUT SECTION
    ============================================ */
 .about {
-    padding: 120px 0 80px;
+    padding: 100px 0;
     background: var(--card-bg);
 }
 
@@ -384,7 +395,7 @@ body {
    PROJECTS SECTION
    ============================================ */
 .projects {
-    padding: 80px 0;
+    padding: 100px 0;
     background: var(--light-bg);
 }
 
@@ -532,27 +543,23 @@ body {
    CONTACT SECTION
    ============================================ */
 .contact {
-    padding: 80px 0;
+    padding: 100px 0;
     position: relative;
-    background: url(images/backgroundTech.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e3a5f 50%, var(--dark-bg) 100%);
     color: var(--text-light);
 }
 
-.contact-overlay {
+.contact::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(15, 23, 42, 0.95) 0%,
-        rgba(30, 41, 59, 0.92) 100%
-    );
-    z-index: 0;
+    background:
+        radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 20% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .contact .container {
@@ -796,11 +803,19 @@ body {
     }
 
     .about {
-        padding: 100px 0 60px;
+        padding: 80px 0;
     }
 
     .profile-img-wrapper {
         margin-bottom: 2rem;
+    }
+
+    .projects {
+        padding: 80px 0;
+    }
+
+    .contact {
+        padding: 80px 0;
     }
 }
 
@@ -814,7 +829,7 @@ body {
     }
 
     .about {
-        padding: 80px 0 50px;
+        padding: 60px 0;
     }
 
     .projects {

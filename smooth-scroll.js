@@ -147,45 +147,11 @@
     }
 
     // ============================================
-    // PARALLAX EFFECT FOR BACKGROUNDS
-    // ============================================
-    function initParallax() {
-        var parallaxSections = document.querySelectorAll('#header, .contact');
-
-        if (!parallaxSections.length) return;
-
-        function updateParallax() {
-            var scrolled = window.pageYOffset;
-
-            parallaxSections.forEach(function(section) {
-                var speed = 0.3;
-                var yPos = -(scrolled * speed);
-                section.style.backgroundPositionY = yPos + 'px';
-            });
-        }
-
-        // Only enable parallax on larger screens
-        if (window.innerWidth > 768) {
-            var ticking = false;
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        updateParallax();
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-        }
-    }
-
-    // ============================================
     // INITIALIZE ON DOM READY
     // ============================================
     function init() {
         initScrollAnimations();
         initNavbarEffect();
-        initParallax();
     }
 
     // Run when DOM is ready
